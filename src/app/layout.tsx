@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { passionOne } from "./ui/fonts";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header";
 
 export const metadata: Metadata = {
   title: "IMMMMDb",
@@ -16,7 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <UserProvider>
-        <body className={`${passionOne.className} antialised`}>{children}</body>
+        <body className={`${passionOne.className} antialised`}>
+          <Header />
+          {children}
+          <Footer />
+        </body>
       </UserProvider>
     </html>
   );
