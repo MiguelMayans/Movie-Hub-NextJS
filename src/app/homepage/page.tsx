@@ -9,9 +9,9 @@ import { useUser } from "@auth0/nextjs-auth0/client";
 import { userContext } from "../../context/userContext";
 import { getAllUsers, createNewUser } from "../../services/user.service";
 
-export function useUserContext() {
+export const useUserContext = () => {
   return useContext(userContext);
-}
+};
 
 const Homepage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
