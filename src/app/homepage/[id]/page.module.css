@@ -1,0 +1,69 @@
+.modalWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 0 3rem 0;
+  background-color: white;
+  width: 900px;
+  margin: 4rem auto;
+  align-content: center;
+  border: 8px solid black;
+}
+
+.modalWrapper__wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.emptyMovieCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 420px;
+  width: 270px;
+  background-color: white;
+  gap: 4rem;
+  font-size: 1.5rem;
+  margin-right: 8rem;
+}
+
+.form__text {
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 1rem;
+  text-decoration: underline;
+}
+
+.form__text__movie {
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 1rem;
+  color: grey;
+}
+
+.input {
+  width: 400px;
+  height: 50px;
+  border: 4px solid black;
+  margin: 0.2rem 0;
+}
+
+.btn__wrapper {
+  display: flex;
+  margin-top: 3rem;
+}
+
+.btn {
+  cursor: pointer;
+  appearance: none;
+  border-radius: 4px;
+  background: black;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1.7rem;
+  border-radius: 20px;
+  margin: 0 auto;
+  width: 15rem;
+}

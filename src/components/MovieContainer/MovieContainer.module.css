@@ -1,0 +1,54 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 3rem;
+  margin: 3rem 14rem 0 14rem;
+  justify-items: center;
+}
+
+.movieCard {
+  border: 8px solid black;
+  height: 420px;
+  width: 280px;
+  background-color: white;
+  margin-bottom: 2rem;
+}
+
+.emptyMovieCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 8px dashed black;
+  height: 420px;
+  width: 270px;
+  background-color: white;
+  gap: 4rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.tittle {
+  color: black;
+  text-align: left;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.genre {
+  color: grey;
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.poster__container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.poster {
+  height: 320px;
+  width: auto;
+}
