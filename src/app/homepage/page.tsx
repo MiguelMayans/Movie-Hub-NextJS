@@ -1,17 +1,12 @@
 "use client";
 
-import { useContext, useEffect, useState } from "react";
-import Modal from "../../components/Modal/Modal";
+import { useEffect, useState } from "react";
 import MovieContainer from "../../components/MovieContainer/MovieContainer";
 import styles from "./page.module.css";
 import AddMovieModal from "../../components/AddMovieModal/AddMovieModal";
 import { useUser } from "@auth0/nextjs-auth0/client";
-import { userContext } from "../../context/userContext";
 import { getAllUsers, createNewUser } from "../../services/user.service";
-
-export const useUserContext = () => {
-  return useContext(userContext);
-};
+import { useUserContext } from "@/context/useUserContext";
 
 const Homepage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);

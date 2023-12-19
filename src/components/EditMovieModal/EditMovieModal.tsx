@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Modal from "../Modal/Modal";
 import styles from "./EditMovieModal.module.css";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { useUserContext } from "../../app/homepage/page";
+import { useUserContext } from "@/context/useUserContext";
 import { updateMovie } from "../../services/movies.service";
 import { useRouter } from "next/navigation";
 
