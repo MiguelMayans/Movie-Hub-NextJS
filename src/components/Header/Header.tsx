@@ -1,11 +1,10 @@
-"use client";
-
+import { getSession } from "@auth0/nextjs-auth0";
 import NavBar from "../NavBar/NavBar";
 import styles from "./Header.module.css";
-import { useUser } from "@auth0/nextjs-auth0/client";
 
-const Header = () => {
-  const { user } = useUser();
+const Header = async () => {
+  const session = await getSession();
+  const user = session?.user;
 
   return (
     user != undefined && (

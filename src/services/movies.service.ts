@@ -27,7 +27,12 @@ export const deleteMovie = async (userId: number, movieId: number) => {
     method: "DELETE",
   });
 
-  const dataFetched = await response.json();
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+
+  const dataFetched = response.status !== 204 ? await response.json() : {};
+
   return dataFetched;
 };
 

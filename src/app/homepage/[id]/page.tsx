@@ -1,15 +1,15 @@
 "use client";
 
-// import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../page";
 import styles from "../[id]/page.module.css";
 import { deleteMovie } from "../../../services/movies.service";
-import { useUser } from "@auth0/nextjs-auth0/client";
 import EditMovieModal from "../../../components/EditMovieModal/EditMovieModal";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const MovieDetail = ({ params }: { params: { id: string } }) => {
   const { currentUser } = useUserContext();
+  const router = useRouter();
 
   const movieDetail = currentUser
     ? currentUser?.movies.find((movie) => {
@@ -19,19 +19,16 @@ const MovieDetail = ({ params }: { params: { id: string } }) => {
 
   if (!movieDetail) return null;
 
-  //   const navigate = useNavigate();
-
   const { name, posterImage, score } = movieDetail;
 
   const handleDeleteMovie = () => {
     if (!movieDetail || !currentUser) {
-      //   navigate("/homepage");
+      router.push("/homepage");
       return;
     }
 
     deleteMovie(currentUser.id, movieDetail.id);
-    // navigate("/homepage");
-    location.reload();
+    router.push("/homepage");
   };
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);

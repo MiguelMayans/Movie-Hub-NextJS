@@ -17,7 +17,6 @@ const MovieContainer = () => {
 
   const { currentUser } = useUserContext();
   const movies = currentUser?.movies;
-  console.log(movies);
 
   return (
     <main className={styles.container}>
@@ -29,7 +28,7 @@ const MovieContainer = () => {
                 <img
                   className={styles.poster}
                   src={movie.posterImage}
-                  alt="Interstellar Image"
+                  alt={`${movie.name} poster`}
                 />
               </span>
               <h5 className={styles.tittle}>{movie.name}</h5>

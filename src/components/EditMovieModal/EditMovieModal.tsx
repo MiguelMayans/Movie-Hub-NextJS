@@ -4,8 +4,7 @@ import styles from "./EditMovieModal.module.css";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useUserContext } from "../../app/homepage/page";
 import { updateMovie } from "../../services/movies.service";
-// import { useNavigate, useParams } from "react-router-dom";
-import { useUser } from "@auth0/nextjs-auth0/client";
+import { useRouter } from "next/navigation";
 
 type AddMovieModalProps = {
   isOpen: boolean;
@@ -25,11 +24,11 @@ const EditMovieModal: React.FC<AddMovieModalProps> = ({
   onClose,
   movieId,
 }) => {
+  const router = useRouter();
+
   const [isModalOpen, setIsModalOpen] = useState(isOpen);
 
   const { currentUser } = useUserContext();
-
-  // const { name: nameParam } = useParams();
 
   const handleCloseModal = () => {
     if (onClose) {
@@ -57,13 +56,11 @@ const EditMovieModal: React.FC<AddMovieModalProps> = ({
     console.log("data:", data);
   };
 
-  // const navigate = useNavigate();
-
   useEffect(() => {
     if (formState.isSubmitSuccessful) {
       reset({ name: "", score: "", posterImage: "", genre: "" });
       handleCloseModal();
-      // navigate("/homepage");
+      router.push("/homepage");
     }
   }, [formState, reset]);
 

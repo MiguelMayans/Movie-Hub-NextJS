@@ -33,10 +33,10 @@ const Profile = async () => {
           </article>
           <section className={styles.data__btn}>
             <Link href={"/homepage"}>
-              <button>Edit Profile</button>
+              <button className={styles.button}>Edit Profile</button>
             </Link>
             <Link href={"/homepage"}>
-              <button>Go Back</button>
+              <button className={styles.button}>Go Back</button>
             </Link>
           </section>
         </section>
