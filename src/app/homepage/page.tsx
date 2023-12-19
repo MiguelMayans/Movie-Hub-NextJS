@@ -7,6 +7,7 @@ import AddMovieModal from "../../components/AddMovieModal/AddMovieModal";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { getAllUsers, createNewUser } from "../../services/user.service";
 import { useUserContext } from "@/context/useUserContext";
+import { UserType } from "@/context/userContext";
 
 const Homepage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -22,29 +23,29 @@ const Homepage: React.FC = () => {
   const { setCurrentLoggedUser } = useUserContext();
   const { user, isLoading } = useUser();
 
-  const findLoggedUser = async () => {
-    if (user) {
-      const allUsers = await getAllUsers();
-      const foundUser = await allUsers.find(
-        (foundUser: any) => foundUser.email === user.email
-      );
-
-      if (!foundUser) {
-        const newUser = {
-          name: user.name,
-          email: user.email,
-        };
-        const userCreated = await createNewUser(newUser);
-        setCurrentLoggedUser(userCreated);
-      } else {
-        setCurrentLoggedUser(foundUser);
-      }
-    }
-  };
-
   useEffect(() => {
+    const findLoggedUser = async () => {
+      if (user) {
+        const allUsers = await getAllUsers();
+        const foundUser = await allUsers.find(
+          (foundUser: UserType) => foundUser.email === user.email
+        );
+
+        if (!foundUser) {
+          const newUser = {
+            name: user.name,
+            email: user.email,
+          };
+          const userCreated = await createNewUser(newUser);
+          setCurrentLoggedUser(userCreated);
+        } else {
+          setCurrentLoggedUser(foundUser);
+        }
+      }
+    };
+
     findLoggedUser();
-  }, [user]);
+  }, [setCurrentLoggedUser, user]);
 
   if (isLoading) {
     return <div>Loading...</div>;

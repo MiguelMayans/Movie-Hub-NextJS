@@ -18,7 +18,7 @@ export default function Home() {
         <LoginButton />
         <article className={styles.signin}>
           <p>
-            Don't have an account? <Link href={"/SignIn"}>Sign In</Link>
+            Don&apos;t have an account? <Link href={"/SignIn"}>Sign In</Link>
           </p>
         </article>
       </main>

@@ -12,7 +12,7 @@ type AddMovieModalProps = {
   movieId: string;
 };
 
-type FormValues = {
+export type FormValues = {
   name: string;
   score: string;
   genre: string;
@@ -26,20 +26,28 @@ const EditMovieModal: React.FC<AddMovieModalProps> = ({
 }) => {
   const router = useRouter();
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isModalOpen, setIsModalOpen] = useState(isOpen);
 
   const { currentUser } = useUserContext();
 
-  const handleCloseModal = () => {
-    if (onClose) {
-      onClose();
-    }
-    setIsModalOpen(false);
-  };
-
   const { register, handleSubmit, reset, formState } = useForm<FormValues>();
-  const { errors, isSubmitSuccessful } = formState;
+  const { errors } = formState;
   console.log(errors);
+
+  useEffect(() => {
+    const handleCloseModal = () => {
+      if (onClose) {
+        onClose();
+      }
+      setIsModalOpen(false);
+    };
+    if (formState.isSubmitSuccessful) {
+      reset({ name: "", score: "", posterImage: "", genre: "" });
+      handleCloseModal();
+      router.push("/homepage");
+    }
+  }, [formState, onClose, reset, router]);
 
   const movieDetail = currentUser
     ? currentUser?.movies.find((movie) => {
@@ -49,20 +57,12 @@ const EditMovieModal: React.FC<AddMovieModalProps> = ({
 
   if (!movieDetail) return null;
 
-  const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
+  const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
     const userId = currentUser?.id;
 
     if (userId) await updateMovie(userId, movieDetail.id, data);
     console.log("data:", data);
   };
-
-  useEffect(() => {
-    if (formState.isSubmitSuccessful) {
-      reset({ name: "", score: "", posterImage: "", genre: "" });
-      handleCloseModal();
-      router.push("/homepage");
-    }
-  }, [formState, reset]);
 
   return (
     <Modal hasCloseBtn={true} isOpen={isOpen} onClose={onClose}>

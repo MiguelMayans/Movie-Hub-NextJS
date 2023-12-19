@@ -1,5 +1,7 @@
 const URL = process.env.NEXT_PUBLIC_API_URL;
 
+type GetTokenType = () => Promise<string>;
+
 export const getAllUsers = async () => {
   const response = await fetch(`${URL}/user`, {
     method: "GET",
@@ -12,7 +14,7 @@ export const getAllUsers = async () => {
   return allUsers;
 };
 
-export const getUserByEmail = async (email: string, getToken: any) => {
+export const getUserByEmail = async (email: string, getToken: GetTokenType) => {
   const token = await getToken();
 
   const response = await fetch(`${URL}/user/${email}`, {
@@ -27,7 +29,7 @@ export const getUserByEmail = async (email: string, getToken: any) => {
   return userByEmail;
 };
 
-export const createNewUser = async (userObject: {}) => {
+export const createNewUser = async (userObject: object) => {
   try {
     const response = await fetch(`${URL}/user`, {
       method: "POST",

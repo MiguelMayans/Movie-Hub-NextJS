@@ -11,6 +11,8 @@ const MovieDetail = ({ params }: { params: { id: string } }) => {
   const { currentUser } = useUserContext();
   const router = useRouter();
 
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
   const movieDetail = currentUser
     ? currentUser?.movies.find((movie) => {
         return movie.id.toString() === params.id;
@@ -30,8 +32,6 @@ const MovieDetail = ({ params }: { params: { id: string } }) => {
     deleteMovie(currentUser.id, movieDetail.id);
     router.push("/homepage");
   };
-
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const handleOpenModal = () => {
     setIsModalOpen(true);

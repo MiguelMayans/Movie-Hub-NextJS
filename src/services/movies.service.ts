@@ -1,6 +1,7 @@
 const URL = process.env.NEXT_PUBLIC_API_URL;
+import { FormValues } from "@/components/EditMovieModal/EditMovieModal";
 
-export const createNewMovie = async (userId: number, data: any) => {
+export const createNewMovie = async (userId: number, data: FormValues) => {
   try {
     const response = await fetch(`${URL}/movies/${userId}`, {
       method: "POST",
@@ -39,7 +40,7 @@ export const deleteMovie = async (userId: number, movieId: number) => {
 export const updateMovie = async (
   userId: number,
   movieId: number,
-  data: any
+  data: FormValues
 ) => {
   try {
     const response = await fetch(`${URL}/movies/${userId}/${movieId}`, {

@@ -20,33 +20,33 @@ type FormValues = {
 };
 
 const AddMovieModal: React.FC<AddMovieModalProps> = ({ isOpen, onClose }) => {
-  const handleCloseModal = () => {
-    if (onClose) {
-      onClose();
-    }
-    setIsModalOpen(false);
-  };
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isModalOpen, setIsModalOpen] = useState(isOpen);
 
   const { register, handleSubmit, reset, formState } = useForm<FormValues>();
-  const { errors, isSubmitSuccessful } = formState;
+  const { errors } = formState;
   console.log(errors);
 
   const { currentUser } = useUserContext();
 
-  const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
+  const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
     const userId = currentUser?.id;
 
     if (userId) await createNewMovie(userId, data);
   };
 
   useEffect(() => {
+    const handleCloseModal = () => {
+      if (onClose) {
+        onClose();
+      }
+      setIsModalOpen(false);
+    };
     if (formState.isSubmitSuccessful) {
       reset({ name: "", score: "", posterImage: "", genre: "" });
       handleCloseModal();
-      location.reload();
     }
-  }, [formState, reset]);
+  }, [formState, onClose, reset]);
 
   return (
     <Modal hasCloseBtn={true} isOpen={isOpen} onClose={onClose}>
