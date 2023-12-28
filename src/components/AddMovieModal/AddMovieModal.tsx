@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Modal from "../Modal/Modal";
 import styles from "./AddMovieModal.module.css";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { useUserContext } from "@/context/useUserContext";
+import { useUserContext } from "../../context/useUserContext";
 import { createNewMovie } from "../../services/movies.service";
 
 type AddMovieModalProps = {

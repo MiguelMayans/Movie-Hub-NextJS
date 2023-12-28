@@ -1,7 +1,7 @@
 import AddMovieModal from "../AddMovieModal/AddMovieModal";
 import styles from "./MovieContainer.module.css";
 import { useState } from "react";
-import { useUserContext } from "@/context/useUserContext";
+import { useUserContext } from "../../context/useUserContext";
 import Link from "next/link";
 
 const MovieContainer = () => {
