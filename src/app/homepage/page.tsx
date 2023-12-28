@@ -45,7 +45,8 @@ const Homepage: React.FC = () => {
     };
 
     findLoggedUser();
-  }, [setCurrentLoggedUser, user]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
 
   if (isLoading) {
     return <div>Loading...</div>;
