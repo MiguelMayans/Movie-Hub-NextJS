@@ -6,8 +6,8 @@ import styles from "./page.module.css";
 import AddMovieModal from "../../components/AddMovieModal/AddMovieModal";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { getAllUsers, createNewUser } from "../../services/user.service";
-import { useUserContext } from "@/context/useUserContext";
-import { UserType } from "@/context/userContext";
+import { useUserContext } from "../../context/useUserContext";
+import { UserType } from "../../context/userContext";
 
 const Homepage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);

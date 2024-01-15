@@ -1,6 +1,6 @@
 "use client";
 
-import { useUserContext } from "@/context/useUserContext";
+import { useUserContext } from "../../../context/useUserContext";
 import styles from "../[id]/page.module.css";
 import { deleteMovie } from "../../../services/movies.service";
 import EditMovieModal from "../../../components/EditMovieModal/EditMovieModal";
