@@ -37,7 +37,7 @@ The page is deployed on Vercel. You can visit it on this URL:
 - [Prisma](https://www.prisma.io/)
 - [Thunder Client](https://www.thunderclient.com/)
 - [Auth0](https://auth0.com/)
-- [Figma](https://www.figma.com/)npmp
+- [Figma](https://www.figma.com/)
 - [Vercel](https://vercel.com/)
 - [Vitest](https://vitest.dev/)
 - [Jenkins](https://www.jenkins.io/)
