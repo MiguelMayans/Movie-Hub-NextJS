@@ -62,3 +62,27 @@
   margin: 0 auto;
   width: 15rem;
 }
+
+@media screen and (max-width: 450px) {
+  .profile {
+    width: 350px;
+    margin-bottom: 1rem;
+    height: 580px;
+  }
+  .button {
+    width: 8rem;
+    font-size: 1.5rem;
+  }
+  .data__wrapper {
+    gap: 1rem;
+    padding: 2rem;
+  }
+  .data__tittle {
+    display: none;
+  }
+  .data__data {
+    font-size: 1.5rem;
+    text-align: center;
+    gap: 1rem;
+  }
+}

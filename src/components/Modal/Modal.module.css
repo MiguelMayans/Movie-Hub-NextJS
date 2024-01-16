@@ -15,3 +15,11 @@
   width: 40px;
   height: 40px;
 }
+
+@media screen and (max-width: 450px) {
+  .modal {
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+    height: 600px;
+  }
+}

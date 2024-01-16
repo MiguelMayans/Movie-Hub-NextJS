@@ -3,3 +3,10 @@
   gap: 5rem;
   font-size: 2rem;
 }
+
+@media screen and (max-width: 450px) {
+  .nav {
+    font-size: 1.3rem;
+    gap: 1.5rem;
+  }
+}

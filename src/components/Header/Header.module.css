@@ -13,3 +13,16 @@
   padding: 2rem;
   font-size: 2rem;
 }
+
+@media screen and (max-width: 450px) {
+  .navbar {
+    max-height: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .welcome {
+    font-size: 1rem;
+    text-align: left;
+    max-width: 220px;
+  }
+}

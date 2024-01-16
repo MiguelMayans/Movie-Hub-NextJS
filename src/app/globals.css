@@ -146,3 +146,12 @@ button {
 input:disabled {
   opacity: 0.4;
 }
+
+@media screen and (max-width: 450px) {
+  button {
+    font-size: 1.4rem;
+  }
+  form {
+    margin-bottom: 2rem;
+  }
+}
