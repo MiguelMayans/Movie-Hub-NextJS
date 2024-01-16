@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![logo](https://res.cloudinary.com/du13ofsms/image/upload/v1700416788/IMMMMDb_logo_tbbhte.png)
 
-## Getting Started
+# IMMMMDb - Internet Miguel Mayans Modest Movie Database
 
-First, run the development server:
+Master in Software Development Project by **[Assembler Institute of Technology](https://assemblerinstitute.com/)** in order to practice **Deploy, CI/CD and Testing** with **Next.js, Vercel, Jenkins and Vitest**  
+Due January 18 2024  
+Made by [Miguel Mayans](https://github.com/MiguelMayans)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [IMMMMDb - Internet Miguel Mayans Modest Movie Database](#immmmdb---internet-miguel-mayans-modest-movie-database)
+  - [About the Project](#about-the-project)
+  - [Screenshots](#screenshots)
+  - [Visit the Page](#visit-the-page)
+  - [Tecnologies Used](#tecnologies-used)
+  - [Special Thanks](#special-thanks)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About the Project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The main objective of this project is to get used to working with Node.JS and Next.js creating a web linked to a database hosted with PostgreSQL and deployed on Vercel, where you can create your own database of movies adding diferent types of data such as name, score, poster image etc.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Screenshots
 
-## Learn More
+![screenshot1](https://res.cloudinary.com/du13ofsms/image/upload/v1700477113/uz2qlcllirlnx3omxtwu.png)
+![screenshot2](https://res.cloudinary.com/du13ofsms/image/upload/v1700477121/ixhevzydyxle8zb9hh9g.png)
 
-To learn more about Next.js, take a look at the following resources:
+## Visit the Page
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The page is deployed on Vercel. You can visit it on this URL:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+[IMMMMDb](https://productionnext.vercel.app/)
 
-## Deploy on Vercel
+## Tecnologies Used
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Node.JS](https://nodejs.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Prisma](https://www.prisma.io/)
+- [Thunder Client](https://www.thunderclient.com/)
+- [Auth0](https://auth0.com/)
+- [Figma](https://www.figma.com/)
+- [Vercel](https://vercel.com/)
+- [Vitest](https://vitest.dev/)
+- [Jenkins](https://www.jenkins.io/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Special Thanks
+
+- All my partners from Lovelace Squad (Antonyo, Yann, Lucas and Aaron)
+- My Tech Lead **Naoise Golden**
