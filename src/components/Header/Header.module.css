@@ -18,11 +18,12 @@
   .navbar {
     max-height: 1rem;
     padding-left: 1rem;
-    padding-right: 1rem;
+    padding-right: 1.5rem;
   }
   .welcome {
     font-size: 1rem;
     text-align: left;
-    max-width: 220px;
+    max-width: 200px;
+    padding: 1rem;
   }
 }

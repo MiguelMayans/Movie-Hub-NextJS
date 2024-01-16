@@ -32,8 +32,6 @@ const EditMovieModal: React.FC<AddMovieModalProps> = ({
   const { currentUser } = useUserContext();
 
   const { register, handleSubmit, reset, formState } = useForm<FormValues>();
-  const { errors } = formState;
-  console.log(errors);
 
   useEffect(() => {
     const handleCloseModal = () => {

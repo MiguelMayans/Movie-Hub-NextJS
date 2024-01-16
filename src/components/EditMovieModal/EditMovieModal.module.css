@@ -28,3 +28,25 @@
   border: 4px solid black;
   margin: 0.2rem 0;
 }
+
+@media screen and (max-width: 450px) {
+  .modalWrapper {
+    flex-direction: column;
+  }
+  .emptyMovieCard {
+    margin: 0 auto;
+    width: 250px;
+    height: 405px;
+  }
+  .form__text {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  .input {
+    width: 250px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin: 0 auto;
+  }
+}

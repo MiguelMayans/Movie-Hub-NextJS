@@ -47,7 +47,12 @@ const MovieDetail = ({ params }: { params: { id: string } }) => {
         <section className={styles.modalWrapper__wrapper}>
           <article>
             <div className={styles.emptyMovieCard}>
-              <img src={posterImage} alt={name} width={300} />
+              <img
+                src={posterImage}
+                alt={name}
+                width={300}
+                className={styles.img}
+              />
             </div>
           </article>
           <article className={styles.form}>

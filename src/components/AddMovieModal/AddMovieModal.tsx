@@ -24,8 +24,6 @@ const AddMovieModal: React.FC<AddMovieModalProps> = ({ isOpen, onClose }) => {
   const [isModalOpen, setIsModalOpen] = useState(isOpen);
 
   const { register, handleSubmit, reset, formState } = useForm<FormValues>();
-  const { errors } = formState;
-  console.log(errors);
 
   const { currentUser } = useUserContext();
 

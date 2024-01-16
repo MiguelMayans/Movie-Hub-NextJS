@@ -57,7 +57,6 @@
 .btn {
   cursor: pointer;
   appearance: none;
-  border-radius: 4px;
   background: black;
   color: white;
   border: none;
@@ -66,4 +65,32 @@
   border-radius: 20px;
   margin: 0 auto;
   width: 15rem;
+}
+
+@media screen and (max-width: 450px) {
+  .modalWrapper {
+    width: 320px;
+    padding-top: 1rem;
+  }
+  .modalWrapper__wrapper {
+    flex-direction: column;
+  }
+  .emptyMovieCard {
+    margin: 0 auto;
+  }
+  .img {
+    width: 250px;
+  }
+
+  .btn {
+    width: 8rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+  .form__text {
+    padding: 0.3rem;
+  }
+  .form__text__movie {
+    padding: 0.3rem;
+  }
 }
